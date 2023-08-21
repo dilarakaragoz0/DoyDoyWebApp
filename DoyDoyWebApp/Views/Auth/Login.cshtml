@@ -1,0 +1,27 @@
+﻿@model LoginModel
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = "Giriş Yap";
+}
+<form method="post">
+<center>
+<div class="w-25">
+<div class="form-floating mb-3">
+    <input asp-for="Email" type="text" class="form-control" id="emailInput" placeholder="Email">
+    <label for="emailInput">E-mail</label>
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+<div class="form-floating mb-3">
+    <input asp-for="Password" type="password" class="form-control" id="passwordInput" placeholder="Password">
+    <label for="passwordInput">Password</label>
+    <span asp-validation-for="Password" class="text-danger"></span>
+
+</div>
+
+<button asp-controller="auth" asp-action="login" class="btn btn-success mb-3 w-100">Giriş Yap</button>
+<br/>
+<a href="/auth/signup" class="btn btn-outline-success w-100">Üye Ol</a>
+</div>
+</center>
+</form>

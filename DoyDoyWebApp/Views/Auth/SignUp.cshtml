@@ -1,0 +1,38 @@
+﻿@model SignupModel
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = "Üye Ol";
+}
+
+<form method="post">
+<center>
+<div class="w-25">
+<div class="form-floating mb-3">
+  <input asp-for ="Name" type="text" class="form-control" id="nameInput" placeholder="İsim">
+  <label for="nameInput">İsim</label>
+  <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="form-floating mb-3">
+  <input asp-for="Surname" type="text" class="form-control" id="surnameInput" placeholder="Soyisimmmm">
+  <label for="surnameInput">Soyisim</label>
+  <span asp-validation-for="Surname" class="text-danger"></span>
+</div>
+
+<div class="form-floating mb-3">
+  <input asp-for="Email" type="text" class="form-control" id="emailInput" placeholder="Email">
+  <label for="emailInput">E-Posta</label>
+  <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+<div class="form-floating mb-3">
+    <input asp-for="Password" type="password" class="form-control" id="passwordInput" placeholder="Password">
+    <label for="passwordInput">Şifre</label>
+    <span asp-validation-for="Password" class="text-danger"></span>
+</div>
+
+<button asp-controller="auth" asp-action="signup" type="submit" class="btn btn-success" >Üye Ol</button>
+<a href="/auth/login" class="btn btn-outline-success">Giriş Yap</a>
+</div>
+</center>
+</form>
